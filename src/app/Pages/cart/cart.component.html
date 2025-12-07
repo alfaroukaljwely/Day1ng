@@ -1,0 +1,31 @@
+<div class="cart-page">
+  <h2>Your Cart</h2>
+
+  <div *ngIf="cart.length === 0">
+    <p>Your cart is empty.</p>
+  </div>
+
+  <div *ngIf="cart.length > 0" class="cart-list">
+    <div *ngFor="let item of cart" class="cart-row">
+      <img [src]="item.image" alt="{{ item.title }}" class="thumb" />
+      <div class="meta">
+        <div class="title">{{ item.title }}</div>
+        <div class="price">{{ item.price | currency }}</div>
+      </div>
+      <div class="actions">
+        <input
+          type="number"
+          min="0"
+          [value]="item.quantity"
+          (change)="onQtyChange(item, $event)"
+        />
+        <button (click)="remove(item)">Remove</button>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <button (click)="clear()">Clear Cart</button>
+      <div class="total">Total: {{ total | currency }}</div>
+    </div>
+  </div>
+</div>
