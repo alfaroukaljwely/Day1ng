@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>Register</h2>
+
+    <form [formGroup]="register" (ngSubmit)="submit()">
+
+        <!-- Username -->
+        <label>Username</label>
+        <input type="text" formControlName="name"
+            [class.invalid]="register.controls.name.invalid && register.controls.name.touched">
+        <span class="error" [hidden]="register.controls.name.valid || !register.controls.name.touched">
+            Username is required (min 4 chars)
+        </span>
+        <br>
+
+        <!-- Email -->
+        <label>Email</label>
+        <input type="email" formControlName="email"
+            [class.invalid]="register.controls.email.invalid && register.controls.email.touched">
+        <span class="error" [hidden]="register.controls.email.valid || !register.controls.email.touched">
+            Enter a valid email
+        </span>
+        <br>
+        <!-- Age -->
+        <label>Age</label>
+        <input type="number" formControlName="age"
+            [class.invalid]="register.controls.age.invalid && register.controls.age.touched">
+        <span class="error" [hidden]="register.controls.age.valid || !register.controls.age.touched">
+            Enter your age
+        </span>
+        <br>
+        <!-- Password -->
+        <label>Password</label>
+        <input type="password" formControlName="password"
+            [class.invalid]="register.controls.password.invalid && register.controls.password.touched">
+        <span class="error" [hidden]="register.controls.password.valid || !register.controls.password.touched">
+            Password must be at least 6 characters
+        </span>
+        <br>
+        <!-- Confirm Password -->
+        <label>Confirm Password</label>
+        <input type="password" formControlName="re_password"
+            [class.invalid]="register.controls.re_password.invalid && register.controls.re_password.touched">
+        <span class="error" [hidden]="register.controls.re_password.valid || !register.controls.re_password.touched">
+            Confirm your password
+        </span>
+
+        <button type="submit">Register</button>
+    </form>
+</div>

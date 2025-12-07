@@ -1,0 +1,16 @@
+<div>
+    <div>
+        <ul>
+            <li><a routerLinkActive="active" routerLink="users">users</a></li>
+            <li><a routerLinkActive="active" routerLink="customers">customers</a></li>
+            <li><a routerLinkActive="active" routerLink="vendors">vendors</a></li>
+            <li><a routerLinkActive="active" routerLink="/address">Address</a></li>
+        </ul>
+    </div>
+    <div>
+        <h1>{{messageFromChild}}</h1>
+    </div>
+    <div>
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
+    </div>
+</div>

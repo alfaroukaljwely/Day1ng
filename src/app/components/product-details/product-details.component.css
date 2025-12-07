@@ -1,0 +1,158 @@
+.product-details-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  min-height: 80vh;
+}
+
+.product-card {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.product-image {
+  flex: 1 1 300px;
+  max-width: 400px;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.product-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.product-info {
+  flex: 1 1 400px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-name {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  color: #ff5722;
+  margin-bottom: 0.5rem;
+}
+
+.product-quantity {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #4caf50;
+}
+
+.product-quantity.out-of-stock {
+  color: #f44336;
+}
+
+.product-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.back-button,
+.buy-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.back-button {
+  background-color: #ddd;
+  color: #333;
+}
+
+.back-button:hover {
+  background-color: #ccc;
+}
+
+.buy-button {
+  background-color: #ff5722;
+  color: #fff;
+}
+
+.buy-button:hover:not(:disabled) {
+  background-color: #e64a19;
+}
+
+.buy-button:disabled {
+  background-color: #ffa07a;
+  cursor: not-allowed;
+}
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  color: #f5a623; /* star color */
+}
+
+.stars {
+  --star-size: 20px;
+  --star-color: #f5a623;
+  --star-background: #ccc;
+  display: inline-block;
+  font-size: var(--star-size);
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  line-height: 1;
+  position: relative;
+}
+
+.stars::before {
+  content: "★★★★★"; /* 5 stars */
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, var(--star-color) calc(var(--rating) / 5 * 100%), var(--star-background) 0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rating-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.spinner-border {
+  width: 4rem;
+  height: 4rem;
+}

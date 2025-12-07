@@ -1,0 +1,67 @@
+<form class="form-shell" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <header class="form-header">
+        <h1>Profile & Addresses</h1>
+        <p class="subtitle">Add one or more addresses. Mark one as default.</p>
+    </header>
+
+    <div class="card">
+        <label class="label">Full name</label>
+        <input class="input" formControlName="fullName" placeholder="John Doe" />
+        <div class="error" role="alert" aria-live="polite"
+            *ngIf="form.get('fullName')?.invalid && form.get('fullName')?.touched">
+            Full name is required.
+        </div>
+    </div>
+
+    <div id="addressesContainer" class="addresses-container" formArrayName="addresses" aria-live="polite">
+        <!-- Single address card template to copy / render programmatically -->
+        @for (addressGroup of addresses.controls; track $index) {
+        <section class="address-card" [formGroupName]="$index">
+            <h2 class="address-title">Address {{ $index + 1 }}</h2>
+
+            <div class="address-grid">
+                <div class="field">
+                    <label class="label">Street</label>
+                    <input class="input" formControlName="street" placeholder="123 Main St" />
+                    <div class="error" *ngIf="addressGroup.get('street')?.invalid && addressGroup.get('street')?.touched">Street is
+                        required.</div>
+                </div>
+
+                <div class="field">
+                    <label class="label">City</label>
+                    <input class="input" formControlName="city" placeholder="Cairo" />
+                    <div class="error" *ngIf="addressGroup.get('city')?.invalid && addressGroup.get('city')?.touched">City is
+                        required.</div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Country</label>
+                    <input class="input" formControlName="country" placeholder="Egypt" />
+                    <div class="error" *ngIf="addressGroup.get('country')?.invalid && addressGroup.get('country')?.touched">Country is
+                        required.</div>
+                </div>
+
+                <div class="field field-checkbox">
+                    <label class="label">Default</label>
+                    <input type="checkbox" formControlName="isDefault" class="checkbox" />
+                </div>
+            </div>
+
+            <div class="address-actions">
+                <button type="button" class="btn btn-danger" [disabled]="addresses.length === 1"
+                    (click)="removeAddress($index)">Remove</button>
+            </div>
+        </section>
+        }
+    </div>
+
+    <div class="actions-row">
+        <button type="button" class="btn btn-outline" id="addAddressBtn" (click)="addAddress()">Add address</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+
+    <section class="result-card" *ngIf="submittedData">
+        <h3>Submitted data</h3>
+        <pre>{{ submittedData | json }}</pre>
+    </section>
+</form>

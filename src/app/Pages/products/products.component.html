@@ -1,0 +1,27 @@
+<div class="products-container">
+   @if(!(products | async)) {
+    <div class="d-flex justify-content-center my-5 loader-overlay">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  }
+  @for( product of products | async ; track product.id) {
+  <div  class="product-card">
+    <div class="product-image">
+      <img [src]="product.image" alt="{{ product.title }}">
+    </div>
+    <div class="product-details">
+      <h3 class="product-name">{{ product.title }}</h3>
+      <p class="product-price">Price: {{ product.price | currency }}</p>
+        <p class="product-price">Category: {{ product.category}}</p>
+      <div class="product-rating">
+  <div class="stars" style="--rating: 4.2;"></div>
+  <span class="rating-text">{{product.rating.rate}} / 5 ({{product.rating.count}} Reviews)</span>
+</div>
+    </div>
+<button class="add-to-cart" (click)="goToDetails(product.id)">Show Details</button>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+}
+</div>

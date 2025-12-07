@@ -1,0 +1,18 @@
+<form class="auth-card" id="loginForm" [formGroup]="login" (ngSubmit)="onSubmit()">
+  <h1 class="brand">Sign in</h1>
+
+  <label for="identifier" class="label">Email</label>
+  <input id="identifier" name="identifier" formControlName="email" type="text" class="input" autocomplete="username" required>
+  <span class="error" [hidden]="login.controls.email.valid || !login.controls.email.touched">This field is required</span>
+
+  <label for="password" class="label">Password</label>
+  <input id="password" name="password" formControlName="password" type="password" class="input" autocomplete="current-password" required>
+  <span class="error" [hidden]="login.controls.password.valid || !login.controls.password.touched">Enter your password</span>
+
+  <button class="btn" type="submit">Sign in</button>
+
+  <div class="meta">
+    <span>Don't have an account?</span>
+    <a class="link" routerLink="/register">Create one</a>
+  </div>
+</form>

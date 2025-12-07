@@ -1,0 +1,127 @@
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.product-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 12px 16px;
+  flex-grow: 1;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #007BFF;
+  margin: 0 0 6px 0;
+  font-weight: bold;
+}
+
+.product-quantity {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #555;
+}
+
+.product-quantity.out-of-stock {
+  color: #FF4C4C;
+  font-weight: bold;
+}
+
+.add-to-cart {
+  margin: 10px 16px 16px 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.add-to-cart:hover:not(:disabled) {
+  background-color: #218838;
+}
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  color: #f5a623; /* star color */
+}
+
+.stars {
+  --star-size: 20px;
+  --star-color: #f5a623;
+  --star-background: #ccc;
+  display: inline-block;
+  font-size: var(--star-size);
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  line-height: 1;
+  position: relative;
+}
+
+.stars::before {
+  content: "★★★★★"; /* 5 stars */
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, var(--star-color) calc(var(--rating) / 5 * 100%), var(--star-background) 0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rating-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.spinner-border {
+  width: 4rem;
+  height: 4rem;
+}

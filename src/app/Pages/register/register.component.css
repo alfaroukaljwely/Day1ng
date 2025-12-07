@@ -1,0 +1,32 @@
+.container {
+  width: 320px;
+  margin: 20px auto;
+  font-family: Arial;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input.invalid {
+  border-color: red;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
