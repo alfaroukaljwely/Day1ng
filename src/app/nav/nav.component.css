@@ -1,0 +1,76 @@
+:root {
+  --brand-blue: #00A0E9;
+  --brand-deep: #1E5B8C;
+  --brand-cyan: #7DD4F5;
+  --gold: #FFD700;
+  --text-dark: #333333;
+  --off-white: #FAFAFA;
+}
+
+/* الـ Navbar الأساسي */
+.navbar {
+  background: linear-gradient(90deg, var(--brand-deep), var(--brand-blue));
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  border-bottom: 2px solid var(--gold);
+}
+
+/* اللوجو */
+.navbar-brand img {
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.1);
+}
+
+/* اللينكات */
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  padding: 8px 14px !important;
+  margin: 0 4px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.nav-link:hover {
+  background-color: var(--brand-cyan);
+  color: var(--text-dark) !important;
+  box-shadow: 0 0 8px var(--brand-cyan);
+  transform: translateY(-1px);
+}
+
+/* عنصر Active */
+.nav-link.active,
+.nav-link.router-link-active {
+  background-color: white !important;
+  color: var(--brand-blue) !important;
+  font-weight: 600;
+  box-shadow: 0 0 6px var(--gold);
+}
+
+/* زر Logout */
+button.nav-link {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Navbar Toggler (موبايل) */
+.navbar-toggler {
+  border-color: var(--gold) !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(80%) sepia(60%) saturate(500%) hue-rotate(160deg);
+}
+
+/* Dropdown (لو موجود مستقبلاً) */
+.dropdown-menu {
+  background-color: var(--off-white);
+  border-radius: 10px;
+  padding: 10px;
+}

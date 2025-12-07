@@ -3,89 +3,57 @@
   margin: 0 auto;
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  color: #333333; /* نص داكن */
 }
 
 /* Hero Section */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 60px;
-}
-
-.hero-text {
-  flex: 1;
-  min-width: 280px;
-}
-
 .hero-text h1 {
   font-size: 2.5rem;
   margin-bottom: 15px;
-  color: #007BFF;
+  color: #00A0E9; /* Bright Blue */
 }
 
 .hero-text p {
   font-size: 1.1rem;
   line-height: 1.6;
-}
-
-.hero-image {
-  flex: 1;
-  min-width: 300px;
+  color: #666666; /* Medium Text */
 }
 
 .hero-image img {
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0,160,233,0.3); /* Shadow باللون الأساسي */
 }
 
 /* Mission & Vision */
-.mission-vision {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-bottom: 60px;
-}
-
 .mission-vision .card {
   flex: 1;
   min-width: 280px;
-  background-color: #f7f7f7;
+  background-color: #FAFAFA; /* Off-White */
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   text-align: center;
 }
 
 .mission-vision h2 {
-  color: #007BFF;
+  color: #1E5B8C; /* Deep Blue */
   margin-bottom: 10px;
 }
 
-/* Team Section */
-.team {
-  text-align: center;
-  margin-bottom: 60px;
+.mission-vision p {
+  color: #333333;
 }
 
+/* Team Section */
 .team h2 {
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #007BFF;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
-  justify-items: center;
+  color: #00A0E9; /* Bright Blue */
 }
 
 .team-member {
-  background-color: #f7f7f7;
+  background-color: #F5F5F5; /* Light Gray */
   border-radius: 12px;
   padding: 15px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
@@ -94,34 +62,22 @@
 
 .team-member:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-.team-member img {
-  width: 100%;
-  max-width: 120px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+  box-shadow: 0 6px 15px rgba(0,160,233,0.25); /* Shadow على لون الباردي الأساسي */
 }
 
 .team-member h3 {
   margin: 5px 0 2px 0;
-  color: #333;
+  color: #1E5B8C; /* Deep Blue */
 }
 
 .team-member p {
   font-size: 0.9rem;
-  color: #666;
+  color: #666666; /* Medium text */
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-
-  .mission-vision {
-    flex-direction: column;
-  }
+.team-member img {
+  width: 80px;   /* بدل 120px */
+  max-width: 80px; 
+  border-radius: 50%;
+  margin-bottom: 10px;
 }

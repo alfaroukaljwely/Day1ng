@@ -1,1 +1,37 @@
+/* Global project palette and helpers */
+:root {
+  /* Primary colors */
+  --bright-blue: #00a0e9;
+  --deep-blue: #1e5b8c;
+  --light-cyan: #7dd4f5;
+
+  /* Secondary colors */
+  --gold: #ffd700;
+  --bright-yellow: #ffeb3b;
+  --magenta: #e91e63;
+  --light-magenta: #ff69b4;
+
+  /* Backgrounds */
+  --bg-white: #ffffff;
+  --bg-offwhite: #fafafa;
+  --bg-lightgray: #f5f5f5;
+
+  /* Text */
+  --text-dark: #333333;
+  --text-medium: #666666;
+  --text-light: #999999;
+
+  /* States / events */
+  --sale-red: #e60012;
+  --purple: #9c27b0;
+  --green: #4caf50;
+
+  /* Derived helpers */
+  --green-dark: #388e3c; /* slightly darker for hover */
+  --muted: #cccccc;
+
+  /* stars */
+  --star-color: var(--gold);
+}
+
 /* You can add global styles to this file, and also import other style files */
